@@ -10,7 +10,7 @@ for(suit in suits){
 //console.log(deck)
 //a shoe in black jack is the machine holds, shuffles, and deals out multiple decks of cards
 function Shoe(){
-	let decks
+	let decks = []
 }
 
 Shoe.prototype.populate = function(n){
@@ -26,15 +26,20 @@ Shoe.prototype.log = function(){
 
 Shoe.prototype.shuffle = function(){
 	for(card in this.decks){
-		//code to generate random number
-		//randomCard = this.decks[random]
-		//this.decks[random] = this.decks[card]
-		//this.decks[card] = randomCard
+		let rand = Math.floor(Math.random() * this.decks.length);
+		let randomCard = this.decks[rand]
+		this.decks[rand] = this.decks[card]
+		this.decks[card] = randomCard
 	}
 }
 
+Shoe.prototype.deal = function(){
+	return this.decks.pop()
+}
 
 let shoe1 = new Shoe()
-shoe1.populate(2)
+shoe1.populate(1)
+shoe1.shuffle()
 shoe1.log()
-
+console.log(shoe1.deal())
+shoe1.log()
