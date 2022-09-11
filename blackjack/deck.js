@@ -37,9 +37,33 @@ Shoe.prototype.deal = function(){
 	return this.decks.pop()
 }
 
+// card functions
+
+//handle ace as 11, logic to handle if ace should be 1 will be dealt with in the hand counter
+cardValue = function(card){
+	let face = card.charAt(0)
+
+	//probably turn this into a switch statement
+	if((/[0-9]/).test(face)){//if number
+		return parseInt(face)
+	}
+	else if(face == 'A'){
+		return 11
+	}
+	else{
+		return 10
+	}
+}
+
+
 let shoe1 = new Shoe()
 shoe1.populate(1)
 shoe1.shuffle()
 shoe1.log()
-console.log(shoe1.deal())
+console.log(cardValue(shoe1.deal()))
+console.log(cardValue("AS"))
+console.log(cardValue("9C"))
+console.log(cardValue("KH"))
+
 shoe1.log()
+
