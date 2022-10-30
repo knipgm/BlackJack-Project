@@ -1,8 +1,36 @@
 import * as deck from "./deck.js"
 
+export function Player(){
+	let hand = []
+    let handTotal
+    let isDealer
+    let chips
+}
 
+Player.prototype.log = function(){
+	console.log(this.isDealer)
+    console.log(this.hand)
+    console.log(this.handTotal)
+    console.log(this.chips)
+}
 
+Player.prototype.hasAce = function(){
+    
+}
 
+Player.prototype.calcHandTotal = function(){
+    let total =0
+    for(let card in this.hand){
+        total += deck.cardValue(card)
+        if(total > 21){
+            if(this.hasAce()){//nesting to avoid doing a search everytime
+            }
+        }
+    }
+    this.handTotal = total
+
+    return this.handTotal
+}
 
 
 let shoe1 = new deck.Shoe()
