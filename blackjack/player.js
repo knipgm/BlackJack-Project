@@ -15,7 +15,7 @@ Player.prototype.log = function(){
 }
 
 Player.prototype.hasAce = function(){
-    
+
 }
 
 Player.prototype.calcHandTotal = function(){
@@ -24,6 +24,7 @@ Player.prototype.calcHandTotal = function(){
         total += deck.cardValue(card)
         if(total > 21){
             if(this.hasAce()){//nesting to avoid doing a search everytime
+                //if ace turn face value to 1 to simplify ace logic
             }
         }
     }
