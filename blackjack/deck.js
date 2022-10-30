@@ -40,7 +40,7 @@ Shoe.prototype.deal = function(){
 // card functions
 
 //handle ace as 11, logic to handle if ace should be 1 will be dealt with in the hand counter
-export function cardValue(card){
+export function cardValue(card){ // should put this into game because player is dependant on it
 	let face = card.charAt(0)
 
 	//probably turn this into a switch statement
